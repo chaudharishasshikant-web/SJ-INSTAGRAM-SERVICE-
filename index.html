@@ -1,100 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="SJ Instagram Service — Instagram account security guidance, 2FA setup and official appeal assistance.">
-  <title>SJ Instagram Service</title>
-  <style>
-    :root{--bg:#090909;--panel:#141414;--gold:#d8ad50;--gold2:#f5d98d;--text:#f7f3e9;--muted:#b9b2a3}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
-    header{position:sticky;top:0;background:rgba(9,9,9,.94);backdrop-filter:blur(10px);border-bottom:1px solid #302719;z-index:5}
-    nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{font-weight:900;letter-spacing:1px;color:var(--gold2);font-size:19px}
-    .links{display:flex;gap:22px;color:var(--muted);font-size:14px}.links a:hover{color:var(--gold2)}
-    .hero{padding:88px 0 74px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#3a2b12 0%,#15110b 34%,#090909 72%)}
-    .eyebrow{display:inline-block;border:1px solid #735a2b;color:var(--gold2);padding:6px 13px;border-radius:99px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
-    h1{font-size:clamp(36px,7vw,68px);line-height:1.08;margin:20px 0 14px;letter-spacing:-1.5px}
-    h1 span,.gold{color:var(--gold2)}.hero p{max-width:650px;margin:0 auto;color:var(--muted);font-size:17px}
-    .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
-    .btn{display:inline-block;padding:13px 21px;border-radius:8px;font-weight:700;border:1px solid var(--gold);transition:.2s}
-    .primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109}.secondary{color:var(--gold2)}
-    .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-    section{padding:65px 0}.section-title{text-align:center;font-size:30px;margin:0 0 10px}.sub{text-align:center;color:var(--muted);margin:0 auto 32px;max-width:650px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-    .card{background:linear-gradient(145deg,#191919,#101010);border:1px solid #382d1b;border-radius:13px;padding:23px}
-    .icon{font-size:26px}.card h3{margin:12px 0 7px;color:var(--gold2);font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}
-    .about{background:#100e0a;border-top:1px solid #302719;border-bottom:1px solid #302719}
-    .about-box{max-width:780px;margin:auto;text-align:center}.about-box p{color:var(--muted)}
-    .notice{border:1px solid #5b4827;background:#17130c;border-radius:10px;padding:17px;color:#d8cba9;font-size:13px;margin-top:24px}
-    .contact{text-align:center}.contact-panel{max-width:720px;margin:auto;padding:35px 22px;background:linear-gradient(145deg,#201a0e,#111);border:1px solid #6a5128;border-radius:16px}
-    footer{border-top:1px solid #302719;padding:23px 0;color:#948b7b;text-align:center;font-size:12px}
-    @media(max-width:700px){.links{gap:12px;font-size:12px}.grid{grid-template-columns:1fr}.hero{padding:68px 0 58px}section{padding:52px 0}.brand{font-size:16px}}
-    @media(max-width:420px){nav{align-items:flex-start;padding:14px 0;flex-direction:column}.links{width:100%;justify-content:space-between}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="SJ Instagram Service - Instagram account security guidance, profile setup and creator support.">
+<title>SJ Instagram Service</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#080808;--panel:#151515;--gold:#d8ad55;--gold2:#f3d58b;--muted:#b8b1a3;--line:#34302a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#302313 0,#080808 42%);color:#f8f5ed;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:980px;margin:auto;padding:22px 16px 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;flex:none}.brand h1{font-size:18px;letter-spacing:1.2px;margin:0}.brand small{color:var(--gold);letter-spacing:2px}
+button,.btn{border:0;border-radius:12px;padding:12px 16px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17120a;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.hero{padding:52px 0 34px}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2px;font-size:12px}.hero h2{font-size:clamp(34px,7vw,58px);line-height:1.05;margin:12px 0}.hero p{max-width:650px;color:var(--muted);font-size:16px;line-height:1.7}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.secondary{border:1px solid var(--gold);color:var(--gold2);background:transparent}
+h3{font-size:24px;margin:34px 0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:linear-gradient(145deg,#191919,#101010);border:1px solid var(--line);border-radius:18px;padding:20px}.symbol{font-size:25px}.card h4{margin:10px 0 7px;font-size:17px}.card p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
+.steps{counter-reset:n}.step{display:flex;gap:13px;align-items:flex-start;margin:14px 0;color:var(--muted)}.num{background:#2a2113;color:var(--gold2);border:1px solid #6f5529;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;flex:none;font-weight:800}
+.note{margin-top:20px;padding:16px;border:1px solid #6b5128;background:#1c170e;border-radius:14px;color:#e7d8b7;font-size:13px;line-height:1.6}
+.contact{margin-top:28px;background:linear-gradient(135deg,#211a0e,#121212);border:1px solid #70572b;border-radius:20px;padding:24px}.contact p{color:var(--muted);line-height:1.6}
+footer{margin-top:32px;color:#8e887d;font-size:12px;text-align:center}
+@media(min-width:700px){.hero{padding-top:72px}}
+</style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="#home">SJ INSTAGRAM SERVICE</a>
-      <div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-    </nav>
-  </div>
+<div class="wrap">
+<header class="top">
+ <div class="brand">
+  <img class="logo" src="icon.svg" alt="SJ logo">
+  <div><h1>SJ INSTAGRAM SERVICE</h1><small>SMART • SAFE • SUPPORT</small></div>
+ </div>
+ <button id="installBtn" hidden>Install App</button>
 </header>
-
-<main id="home">
-  <section class="hero">
-    <div class="wrap">
-      <span class="eyebrow">Account Support • Security • Guidance</span>
-      <h1>Protect Your <span>Instagram</span><br>Account with Confidence</h1>
-      <p>Instagram account security aur official support process ke liye simple, responsible guidance — easy language mein.</p>
-      <div class="actions">
-        <a class="btn primary" href="#contact">WhatsApp पर संपर्क करें</a>
-        <a class="btn secondary" href="#services">हमारी Services देखें</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="wrap">
-      <h2 class="section-title">Our <span class="gold">Services</span></h2>
-      <p class="sub">आपके अकाउंट को सुरक्षित रखने और Instagram के official processes समझने में सहायता।</p>
-      <div class="grid">
-        <article class="card"><div class="icon">🔐</div><h3>Account Security</h3><p>Strong password, login activity और security settings समझने में मदद।</p></article>
-        <article class="card"><div class="icon">🛡️</div><h3>Two-Factor Authentication</h3><p>Authenticator app या अन्य उपलब्ध 2FA विकल्प सेट करने की guidance।</p></article>
-        <article class="card"><div class="icon">📩</div><h3>Official Appeal Guidance</h3><p>Disabled या suspended account के लिए Instagram के official appeal steps समझने में सहायता।</p></article>
-        <article class="card"><div class="icon">📱</div><h3>Login & Recovery Help</h3><p>अपने अकाउंट के login और recovery options इस्तेमाल करने की जानकारी।</p></article>
-        <article class="card"><div class="icon">⚙️</div><h3>Privacy Settings</h3><p>Privacy, permissions और account settings को सही तरह configure करने में मदद।</p></article>
-        <article class="card"><div class="icon">📚</div><h3>Safety Guidance</h3><p>Phishing links, fake messages और suspicious login alerts पहचानने की जानकारी।</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="wrap about-box">
-      <h2 class="section-title">About <span class="gold">SJ Instagram Service</span></h2>
-      <p>हमारा उद्देश्य Instagram users को account security, privacy और official recovery/appeal processes के बारे में आसान guidance देना है।</p>
-      <div class="notice"><strong>Important:</strong> हम Instagram/Meta से affiliated नहीं हैं। Account recovery या appeal approval की guarantee नहीं देते। कभी भी अपना password, OTP, backup code या recovery code किसी के साथ share न करें। सहायता केवल अकाउंट के असली मालिक की अनुमति से लें।</div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div class="contact-panel">
-        <h2 class="section-title">Need <span class="gold">Help?</span></h2>
-        <p class="sub">अपनी query बताने के लिए WhatsApp पर message करें।</p>
-        <!-- नीचे दिए गए लिंक में 91 के बाद अपना WhatsApp नंबर डालें। उदाहरण: 919876543210 -->
-        <a class="btn primary" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener">WhatsApp पर Message करें</a>
-        <p style="color:#a99f8d;font-size:12px;margin:18px 0 0">WhatsApp नंबर जोड़ने के लिए HTML में 91YOURNUMBER को अपने नंबर से बदलें।</p>
-      </div>
-    </div>
-  </section>
+<main>
+<section class="hero">
+ <div class="eyebrow">YOUR INSTAGRAM SUPPORT PARTNER</div>
+ <h2>Instagram को रखें<br><span style="color:var(--gold2)">Secure & Professional.</span></h2>
+ <p>Instagram प्रोफाइल को बेहतर बनाने, अकाउंट सुरक्षा समझने और आधिकारिक सहायता प्रक्रिया में मार्गदर्शन पाने के लिए SJ Instagram Service से संपर्क करें।</p>
+ <div class="actions">
+  <a class="btn" href="https://wa.me/918379854979?text=Hello%20SJ%20Instagram%20Service%2C%20mujhe%20service%20ki%20jankari%20chahiye." target="_blank" rel="noopener">WhatsApp पर संपर्क करें</a>
+  <a class="btn secondary" href="#services">सर्विसेज देखें</a>
+ </div>
+</section>
+<section id="services">
+ <div class="eyebrow">WHAT WE OFFER</div><h3>हमारी सर्विसेज</h3>
+ <div class="grid">
+  <article class="card"><div class="symbol">🛡️</div><h4>Instagram ID Security</h4><p>पासवर्ड सुरक्षा, लॉगिन एक्टिविटी और अकाउंट सुरक्षित रखने के तरीके समझें।</p></article>
+  <article class="card"><div class="symbol">🔐</div><h4>Two-Factor Authentication</h4><p>2-step verification और authenticator setup के लिए step-by-step guidance।</p></article>
+  <article class="card"><div class="symbol">📩</div><h4>Suspended Account Guidance</h4><p>सस्पेंडेड अकाउंट के लिए उपलब्ध आधिकारिक review और appeal प्रक्रिया की जानकारी।</p></article>
+  <article class="card"><div class="symbol">♻️</div><h4>Disabled Account Appeal Help</h4><p>Instagram के official appeal विकल्प समझने और सही जानकारी तैयार करने में मदद।</p></article>
+  <article class="card"><div class="symbol">👤</div><h4>Profile Setup & Bio</h4><p>प्रोफाइल bio, category, highlights और professional profile presentation में सहायता।</p></article>
+  <article class="card"><div class="symbol">🎨</div><h4>Creator Content Support</h4><p>रील्स आइडिया, captions, hashtags और पोस्टिंग प्लान के लिए सुझाव।</p></article>
+ </div>
+</section>
+<section>
+ <div class="eyebrow">HOW IT WORKS</div><h3>सेवा लेने का तरीका</h3>
+ <div class="steps">
+  <div class="num">1</div><div><b>WhatsApp पर मैसेज करें</b><br>अपनी समस्या या जरूरत बताएं।</div>
+ </div>
+ <div class="steps">
+  <div class="num">2</div><div><b>समस्या की जानकारी दें</b><br>केवल जरूरी जानकारी और error का screenshot साझा करें।</div>
+ </div>
+ <div class="steps">
+  <div class="num">3</div><div><b>Guidance प्राप्त करें</b><br>आपको सुरक्षित और आधिकारिक प्रक्रिया के अनुसार सहायता दी जाएगी।</div>
+ </div>
+</section>
+<section class="contact">
+ <div class="eyebrow">CONTACT SJ</div><h3 style="margin-top:8px">आपकी सहायता के लिए हमसे जुड़ें</h3>
+ <p>अपनी Instagram service से जुड़ी जानकारी के लिए WhatsApp पर संपर्क करें।</p>
+ <a class="btn" href="https://wa.me/918379854979?text=Hello%2C%20SJ%20Instagram%20Service." target="_blank" rel="noopener">WhatsApp: +91 83798 54979</a>
+ <div class="note"><b>सुरक्षा सूचना:</b> अपना Instagram password, OTP, backup code या ईमेल का password किसी के साथ साझा न करें। हम Instagram/Meta से जुड़े नहीं हैं। अकाउंट रिकवरी या अपील का परिणाम निश्चित नहीं किया जा सकता; अंतिम निर्णय Instagram/Meta का होता है।</div>
+</section>
 </main>
-
-<footer><div class="wrap">© <span id="year">2026</span> SJ Instagram Service. All rights reserved.</div></footer>
-</body>
-</html>
+<footer>© <span id="year"></span> SJ Instagram Service • Independent support service</footer>
+</div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+let deferredPrompt;
+const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false;});
+installBtn.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.hidden=true;});
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+</script>
+</body></html>
